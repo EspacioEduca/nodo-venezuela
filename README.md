@@ -1,5 +1,7 @@
 # Nodo Venezuela — Noticias que reconstruyen
 
+**Demo navegable (solo lectura):** https://espacioeduca.github.io/nodo-venezuela/ — snapshot estático de las páginas públicas para revisión de YM Agency. Los formularios y el panel `/admin` solo funcionan corriendo el prototipo (abajo). Para regenerar el demo: `npm run seed && ./scripts/demo-estatico.sh` y push de `site/` a la rama `gh-pages`.
+
 Prototipo funcional del portal del brief de YM Agency. Secciones: Inicio, Portal de Noticias (4 categorías con filtro), Sala de Prensa, Alianza por Venezuela (form Súmate) y Contacto. Panel editorial en `/admin`.
 
 ## Correr localmente

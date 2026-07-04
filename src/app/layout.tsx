@@ -20,6 +20,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className="min-h-screen bg-white text-neutral-900 antialiased">
+        {process.env.PAGES_BASE && (
+          <p className="bg-yellow-400 px-4 py-2 text-center text-sm font-semibold text-neutral-950">
+            Demo estático de revisión — los formularios y el panel editorial funcionan en la
+            versión completa del prototipo.
+          </p>
+        )}
         <header className="bg-neutral-950 text-white">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-4">
             <Link href="/" className="text-lg font-extrabold tracking-tight">
