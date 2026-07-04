@@ -19,7 +19,7 @@ const SECCIONES = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="min-h-screen bg-white text-neutral-900 antialiased">
+      <body className="flex min-h-screen flex-col bg-white text-neutral-900 antialiased">
         {process.env.PAGES_BASE && (
           <p className="bg-yellow-400 px-4 py-2 text-center text-sm font-semibold text-neutral-950">
             Demo estático de revisión — los formularios y el panel editorial funcionan en la
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+        <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">{children}</main>
         <footer className="mt-12 border-t bg-neutral-950 px-4 py-6 text-center text-sm text-neutral-400">
           Nodo Venezuela — Powered by YM Agency · Desarrollo web por Espacio Educa
         </footer>

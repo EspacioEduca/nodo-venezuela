@@ -5,10 +5,17 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 export PAGES_BASE=/nodo-venezuela
+
+# npm start deja un nieto next-server que kill $PID no alcanza; grupo propio + kill al grupo.
+if ss -tln | grep -q ':3199 '; then
+  echo "El puerto 3199 está ocupado (¿next-server huérfano?). Ciérralo primero." >&2
+  exit 1
+fi
+
 npm run build
-PORT=3199 npm start >/dev/null 2>&1 &
+setsid env PORT=3199 npm start >/dev/null 2>&1 &
 PID=$!
-trap 'kill $PID 2>/dev/null' EXIT
+trap 'kill -- -"$PID" 2>/dev/null' EXIT
 sleep 4
 
 rutas=(/ /noticias /sala-de-prensa /alianza /contacto)
